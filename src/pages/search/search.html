@@ -1,0 +1,14 @@
+<ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+
+  
+<ion-list>
+    <ion-item *ngFor="let item of finalitems">
+    
+      <ion-item (click)="itemClick(item.eid)">{{item.ename}}</ion-item> 
+      
+         
+        
+        </ion-item>
+</ion-list>
+
+

@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let item of items">
+    <img src= {{item.eimage}}/>
+   
+  </ion-card>
+
+<p *ngFor="let item of items" class="vis">
+  <b>
+    <div align="center">
+      {{item.ename}}
+    </div>
+  </b>
+</p>
+
+<p *ngFor="let item of items">
+    <ion-icon name="calendar"></ion-icon>
+    {{item.edate}}
+  </p>
+  <p *ngFor="let item of items">
+      <ion-icon name="pin"></ion-icon>
+      {{item.venue}}
+    </p>
+
+<p *ngFor="let item of items">
+    <ion-icon name="time"></ion-icon>
+    {{item.etimefrom}}
+  </p>
+<p *ngFor="let item of items">
+  <b>Description</b><br>
+  {{item.description}}
+</p>
+
+<div align="center">
+<ion-item padding *ngFor="let item of items">
+  <button default ion-button [disabled]="disableButton" round (click)="itemClick(item.eid)" align="center">Apply</button>
+</ion-item>
+</div>
+</ion-content>

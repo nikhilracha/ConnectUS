@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-navbar color="dark">
+    
+        <ion-toolbar no-border-top >
+            <ion-segment [(ngModel)]="d">
+                <ion-segment-button value="apl">
+                  Profile
+                </ion-segment-button>
+                </ion-segment>
+                </ion-toolbar>
+      </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>Follow us on Twitter</ion-list-header>
+    <ion-item>
+      <ion-icon name="ionic" item-start></ion-icon>
+      @EduDesk
+    </ion-item>
+
+  </ion-list>
+  <ion-item>
+    <button ion-button color="success" (click)="onLogout()" block>Logout</button>
+    </ion-item>
+</ion-content>

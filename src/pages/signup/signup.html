@@ -1,0 +1,84 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-card-header><b ion-text color="new1"> Register </b> </ion-card-header>
+    
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+<ion-list>
+<form novalidate (ngSubmit)="onSubmit()" [formGroup]="user">
+<ion-item>
+<ion-label stacked>Name</ion-label>
+<ion-input formControlName="name" value="" type="text"></ion-input>
+</ion-item>
+
+<ion-item no-lines *ngIf="( user.get('name').hasError('required') ) && user.get('name').touched">
+<div class="error" *ngIf="user.get('name').hasError('required') && user.get('name').touched"><p ion-text color="danger">Name is required</p></div>
+</ion-item>
+
+<ion-item>
+  <ion-label stacked>Email</ion-label>
+  <ion-input formControlName="email" value="" type="email" pattern="[A-Za-z0-9._%+-]{5,}@[a-zA-Z]{4,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})"></ion-input>
+</ion-item>
+
+<ion-item no-lines *ngIf="( user.get('email').hasError('required') ) && user.get('email').touched">
+<div class="error" *ngIf="user.get('email').hasError('required') && user.get('email').touched"><p ion-text color="danger">Email is required</p></div>
+</ion-item>
+
+<ion-item>
+  <ion-label stacked>Ph no.</ion-label>
+  <ion-input formControlName="phone" type="tel" pattern="[0-9]{10,10}" minlength="10" maxlength="10" value=""></ion-input>
+</ion-item>
+
+<ion-item no-lines *ngIf="( user.get('phone').hasError('required') ) && user.get('phone').touched">
+<div class="error" *ngIf="user.get('phone').hasError('required') && user.get('phone').touched"><p ion-text color="danger">Ph no. is required</p></div>
+</ion-item>
+
+<ion-item>
+    <ion-label>Education Qualification</ion-label>
+    <ion-select interface="action-sheet" formControlName="qualification">
+      <ion-option>10th /10+2 </ion-option>
+      <ion-option>Graduate</ion-option>
+      <ion-option>Post Graduate</ion-option> 
+    </ion-select>
+  </ion-item>
+
+<ion-item>
+<ion-label stacked >Password</ion-label>
+<ion-input type="password" value="" formControlName="password"></ion-input>
+</ion-item>
+
+
+  
+<ion-item no-lines *ngIf="( user.get('password').hasError('required') ) && user.get('password').touched">
+<div class="error" *ngIf="user.get('password').hasError('required') && user.get('password').touched"><p ion-text color="danger">Password is required</p></div>
+</ion-item>
+
+
+
+<ion-item>
+<ion-label stacked >Confirm Password</ion-label>
+<ion-input type="text" value="" formControlName="re_password"></ion-input>
+</ion-item>
+
+<ion-item no-lines *ngIf="( user.get('re_password').hasError('equalTo') || user.get('re_password').hasError('required') ) && user.get('re_password').touched">
+<div class="error" *ngIf="user.get('re_password').hasError('required') && user.get('re_password').touched"><p ion-text color="danger">Confirm password is required</p></div>
+<div class="error" *ngIf="user.get('re_password').hasError('equalTo') && user.get('re_password').touched"><p ion-text color="danger">Password Mismatch</p></div>
+</ion-item>
+  
+<ion-item>
+<button ion-button color="success" [disabled]="user.invalid" block>Sign Up</button>
+</ion-item>
+</form>
+<ion-item>
+  <button ion-button color="success" (click)="goLogin()" block>Already Registered ?</button>
+  </ion-item>
+</ion-list>
+
+
+</ion-content>

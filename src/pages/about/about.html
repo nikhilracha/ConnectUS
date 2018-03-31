@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar color="dark">
+    
+    <ion-toolbar no-border-top >
+        <ion-segment [(ngModel)]="d">
+            <ion-segment-button value="apl">
+              My Applied Events
+            </ion-segment-button>
+            </ion-segment>
+            </ion-toolbar>
+  </ion-navbar>
+ 
+</ion-header>
+
+
+<ion-content >
+
+    <ng-container>
+        <ion-list *ngFor="let item of items">
+        
+           
+           <ion-card>
+           
+            <ion-card-content>
+              {{item.ename}} <div style=" padding:30px; text-align:right;"> <button default ion-button item-end disabled round>{{item.status}}</button> </div>        
+             </ion-card-content>
+          </ion-card>
+          
+        </ion-list>
+  </ng-container>
+  
+  
+
+  
+
+
+  
+  </ion-content>
+
+
+
+

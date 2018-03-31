@@ -1,0 +1,281 @@
+<ion-header>
+  <ion-navbar no-border-bottom no-lines ion-text color="dark">
+    
+  
+
+  <ion-toolbar no-border-top >
+    <ion-segment [(ngModel)]="districts" (ionChange)="updatePage(districts)" >
+      <ion-segment-button  value="North Sikkim" (ionSelect)="selectupdate()">
+        North
+      </ion-segment-button>
+      <ion-segment-button value="South Sikkim" (ionSelect)="selectupdate()" >
+        South
+      </ion-segment-button>
+      <ion-segment-button value="East Sikkim" (ionSelect)="selectupdate()" >
+        East
+      </ion-segment-button>
+      <ion-segment-button value="West Sikkim" (ionSelect)="selectupdate()">
+        West
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+  <ion-toolbar no-border-top no-border class="scrollable-segments">
+      <ion-segment [(ngModel)]="catg"  (ionChange)="updatePagecat(catg)">
+          <ion-segment-button value="All">
+              All
+            </ion-segment-button>
+        <ion-segment-button value="Health">
+          Health
+        </ion-segment-button>
+        <ion-segment-button value="Environment">
+          Environment
+        </ion-segment-button>
+        <ion-segment-button value="Cultural">
+          Cultural
+        </ion-segment-button>
+        <ion-segment-button value="Education">
+          Education
+        </ion-segment-button>
+        <ion-segment-button value="Agriculture">
+            Agriculture
+          </ion-segment-button>
+          <ion-segment-button value="Social">
+              Social
+            </ion-segment-button>
+            
+      </ion-segment>
+    </ion-toolbar>
+</ion-navbar>
+</ion-header>
+
+<ion-content>
+
+    
+
+  <div [ngSwitch]="districts">
+
+      <div [ngSwitch]="catg">
+
+
+          <ion-list *ngSwitchCase="'All'">
+            <ng-container>
+              <ion-list *ngFor="let item of items">
+              <img src={{item.eimage}} /> 
+                 <ion-item>{{item.ename}}</ion-item> 
+                    <p>
+                      {{item.description}}
+                  </p>
+                  <ion-item padding>
+                      <button default ion-button item-right round (click)="itemClick(item.eid)">More</button>
+                    </ion-item>
+              </ion-list>
+        </ng-container>
+          </ion-list>
+
+          <ion-list *ngSwitchCase="'Health'">
+               
+
+            <ng-container *ngFor="let item of items">
+                  <ion-list *ngFor="let item of items">
+                  <img src={{item.eimage}} /> 
+                     <ion-item>{{item.ename}}</ion-item> 
+                        <p>
+                          {{item.description}}
+                      </p>
+                      <ion-item padding>
+                          <button default ion-button item-right round (click)="itemClick(item.eid)">More</button>
+                        </ion-item>
+                  </ion-list>
+            </ng-container>
+          </ion-list>
+
+
+          <ion-list *ngSwitchCase="'Environment'">
+              
+              <ng-container *ngFor="let item of items">
+                  <ion-list *ngFor="let item of items">
+                  <img src={{item.eimage}} /> 
+                     <ion-item>{{item.ename}}</ion-item> 
+                        <p>
+                          {{item.description}}
+                      </p>
+                      <ion-item padding>
+                          <button default ion-button item-right round (click)="itemClick(item.eid)">More</button>
+                        </ion-item>
+                  </ion-list>
+            </ng-container>
+         </ion-list>
+
+
+         <ion-list *ngSwitchCase="'Cultural'">
+            
+            <ng-container *ngFor="let item of items">
+                <ion-list *ngFor="let item of items">
+                <img src={{item.eimage}} /> 
+                   <ion-item>{{item.ename}}</ion-item> 
+                      <p>
+                        {{item.description}}
+                    </p>
+                    <ion-item padding>
+                        <button default ion-button item-right round (click)="itemClick(item.eid)">More</button>
+                      </ion-item>
+                </ion-list>
+          </ng-container>
+       </ion-list>
+
+
+       <ion-list *ngSwitchCase="'Education'">
+          
+          <ng-container *ngFor="let item of items">
+              <ion-list *ngFor="let item of items">
+              <img src={{item.eimage}} /> 
+                 <ion-item>{{item.ename}}</ion-item> 
+                    <p>
+                      {{item.description}}
+                  </p>
+                  <ion-item padding>
+                      <button default ion-button item-right round (click)="itemClick(item.eid)">More</button>
+                    </ion-item>
+              </ion-list>
+        </ng-container>
+     </ion-list>
+
+
+     <ion-list *ngSwitchCase="'Agriculture'">
+       
+        <ng-container *ngFor="let item of items">
+            <ion-list *ngFor="let item of items">
+            <img src={{item.eimage}} /> 
+               <ion-item>{{item.ename}}</ion-item> 
+                  <p>
+                    {{item.description}}
+                </p>
+                <ion-item padding>
+                    <button default ion-button item-right round (click)="itemClick(item.eid)">More</button>
+                  </ion-item>
+            </ion-list>
+      </ng-container>
+   </ion-list>
+
+
+   <ion-list *ngSwitchCase="'Social'">
+      
+      <ng-container *ngFor="let item of items">
+          <ion-list *ngFor="let item of items">
+          <img src={{item.eimage}} /> 
+             <ion-item>{{item.ename}}</ion-item> 
+                <p>
+                  {{item.description}}
+              </p>
+              <ion-item padding>
+                  <button default ion-button item-right round (click)="itemClick(item.eid)">More</button>
+                </ion-item>
+          </ion-list>
+    </ng-container>
+ </ion-list>
+
+</div>
+
+  <!--  <ion-list *ngSwitchCase="'North Sikkim'">
+        <ng-container *ngFor="let item of items">
+            <ion-list *ngFor="let item of items">
+            <img src={{item.eimage}} />
+                <ion-item>{{item.ename}}</ion-item> 
+                  <p>
+                    {{item.edescription}}
+                 </p>
+                <ion-item padding>
+                    <button default ion-button item-right round (click)="itemClick(item.ename)">More</button>
+                  </ion-item>
+              </ion-list>
+        </ng-container>
+    </ion-list>
+    
+    
+
+    <ion-list *ngSwitchCase="'South Sikkim'">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/img/thumbnail-kitten-1.jpg">
+        </ion-thumbnail>
+        <h2>southsikkim</h2>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/img/thumbnail-kitten-3.jpg">
+        </ion-thumbnail>
+        <h2>southsikkim</h2>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/img/thumbnail-kitten-4.jpg">
+        </ion-thumbnail>
+        <h2>southsikkim</h2>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/img/thumbnail-kitten-2.jpg">
+        </ion-thumbnail>
+        <h2>southsikkim</h2>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'East Sikkim'">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/img/thumbnail-duckling-1.jpg">
+        </ion-thumbnail>
+        <h2>eastsikkim</h2>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/img/thumbnail-duckling-2.jpg">
+        </ion-thumbnail>
+        <h2>eastsikkim</h2>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/img/thumbnail-duckling-3.jpg">
+        </ion-thumbnail>
+        <h2>eastsikkim</h2>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/img/thumbnail-duckling-4.jpg">
+        </ion-thumbnail>
+        <h2>eastsikkim</h2>
+      </ion-item>
+    </ion-list>
+
+
+    <ion-list *ngSwitchCase="'wsikkim'">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/img/thumbnail-duckling-1.jpg">
+        </ion-thumbnail>
+        <h2>westsikkim</h2>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/img/thumbnail-duckling-2.jpg">
+        </ion-thumbnail>
+        <h2>westsikkim</h2>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/img/thumbnail-duckling-3.jpg">
+        </ion-thumbnail>
+        <h2>westsikkim</h2>
+      </ion-item>
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/img/thumbnail-duckling-4.jpg">
+        </ion-thumbnail>
+        <h2>westsikkim</h2>
+      </ion-item>
+    </ion-list>
+
+  -->
+
+  </div>
+</ion-content>

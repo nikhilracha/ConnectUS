@@ -1,0 +1,48 @@
+<ion-header>
+
+  <ion-navbar>
+    
+    <ion-card-header><b ion-text color="new1"> LOGIN </b> </ion-card-header>
+    
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+    <ion-list>
+    <form novalidate (ngSubmit)="onSubmit()" [formGroup]="user">
+    
+    
+    <ion-item>
+    <ion-label stacked>Email</ion-label>
+    <ion-input formControlName="email" value="" type="text"></ion-input>
+    </ion-item>
+    
+    <ion-item no-lines *ngIf="( user.get('email').hasError('required') ) && user.get('email').touched">
+    <div class="error" *ngIf="user.get('email').hasError('required') && user.get('email').touched"><p ion-text color="danger">Email is required</p></div>
+    </ion-item>
+    
+    
+    
+    <ion-item>
+    <ion-label stacked >Password</ion-label>
+    <ion-input type="password" value="" formControlName="password"></ion-input>
+    </ion-item>
+      
+    <ion-item no-lines *ngIf="( user.get('password').hasError('required') ) && user.get('password').touched">
+    <div class="error" *ngIf="user.get('password').hasError('required') && user.get('password').touched"><p ion-text color="danger">Password is required</p></div>
+    </ion-item>
+    
+    
+      
+    <ion-item>
+    <button ion-button color="success" [disabled]="user.invalid" block>Login</button>
+    </ion-item>
+    </form>
+    <ion-item>
+      <button ion-button color="success" (click)="onSignup()" block>Sign Up</button>
+      </ion-item>
+    </ion-list>
+
+
+</ion-content>
