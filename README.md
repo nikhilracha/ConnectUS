@@ -9,9 +9,9 @@ Mobile Application is a Hybrid application built using AngularJS and ionic frame
 * Once the student applies for any program, If he is selected he will be notified with a notification and also a email notification.
 * The entire Backend is built on PHP. 
 * Screenshots of Mobile Application.
-<img src="/images/1.png" align="left" height="500" width="300" >
-<img src="/images/2.png" align="left" height="500" width="300" >
-<img src="/images/3.png" align="left" height="500" width="300" >
+<img src="/images/1.png" height="500" width="300" >
+<img src="/images/2.png"  height="500" width="300" >
+<img src="/images/3.png"  height="500" width="300" >
 
 <br/>
 
