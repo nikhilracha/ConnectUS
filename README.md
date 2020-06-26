@@ -8,9 +8,12 @@ Mobile Application is a Hybrid application built using AngularJS and ionic frame
 * It lists out the available schemes and programs for the student volunteers based on the location.
 * Once the student applies for any program, If he is selected he will be notified with a notification and also a email notification.
 * The entire Backend is built on PHP. 
-![Mobile App](/images/1.png)
-![Mobile App](/images/2.png)
-![Mobile App](/images/3.png)
+* Screenshots of Mobile Application.
+<img src="/images/1.png" align="left" height="500" width="300" >
+<img src="/images/2.png" align="left" height="500" width="300" >
+<img src="/images/3.png" align="left" height="500" width="300" >
+
+<br/>
 
 Web Application is built using HTML5,CSS and bootstrap. 
 * It is built for the government officials to post the event or programs and manage the applied candidates.
